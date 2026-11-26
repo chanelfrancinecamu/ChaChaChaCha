@@ -1,7 +1,155 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Menu with Submenu</title>
+  <style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+   
+    .navbar {
+      background-color: #F2A900;
+      padding: 0 2rem;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative; 
+    }
+
+    
+    .nav-link {
+      display: block;
+      color: #f8fafc;
+      text-decoration: none;
+      padding: 1rem 1.25rem;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-item:focus-within > .nav-link {
+      background-color: #E89B5B;
+    }
+
+    .submenu {
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background-color: #BFE7EA;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 0 0 6px 6px;
+      
+    
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.2s ease;
+      z-index: 100;
+    }
+
+    .nav-item:hover .submenu,
+    .nav-item:focus-within .submenu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+  
+    .submenu-link {
+      display: block;
+      color: #f8fafc;
+      text-decoration: none;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .submenu-link:hover,
+    .submenu-link:focus {
+      background-color: #475569;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" aria-label="Main Navigation">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+      
+      <!-- Parent Item with Submenu -->
+      <li class="nav-item">
+        <a href="#" class="nav-link" aria-haspopup="true"> Gallery▾</a>
+        <ul class="submenu">
+          <li><a href="#" class="submenu-link"> Tourist Destinations</a></li>
+          <li><a href="#" class="submenu-link"> Photo Collection </a></li>
+        </ul>
+      </li>
+
+      <!-- Parent Item with Submenu -->
+      <li class="nav-item">
+        <a href="#services" class="nav-link" aria-haspopup="true"> Contact ▾</a>
+        <ul class="submenu">
+          <li><a href="#" class="submenu-link"> Send a Message </a></li>
+          <li><a href="#" class="submenu-link"> Our Contact Information </a></li>
+      </li>
+
+    </ul>
+  </nav> 
+ 
+
+<body style="background-color: #ebdea4; color: #ff4313; font-family: Arial, sans-serif;"></body>
+ 
+<style>
+  .square-box {
+    width: 200px;           
+    height: 200px;          
+    border: 2px solid #333; 
+    padding: 15px;          
+    box-sizing: border-box; 
+    overflow: hidden;       
+  }
+</style>
+
+    <section id="philippines-overview">
+      <center>
+        <h1>Discover the Philippines</h1>
+        
+        <p>
+            The <strong>Philippines</strong> is an archipelagic country in Southeast Asia situated in the western Pacific Ocean. It consists of more than <strong>7,600 islands</strong>, broadly categorized under three main geographical divisions from north to south: <em>Luzon</em>, <em>Visayas</em>, and <em>Mindanao</em>.
+        </p>
+
+        <h2>Key Highlights</h2>
+        <ul>
+            <li><strong>Capital City:</strong> Manila (with Quezon City as the most populous city).</li>
+            <li><strong>Languages:</strong> Filipino and English are the official languages, alongside over 170 regional languages.</li>
+            <li><strong>Natural Wonders:</strong> Famous for its biodiversity, white-sand beaches like Boracay and Palawan, active volcanoes like Mayon, and the ancient Banaue Rice Terraces.</li>
+            <li><strong>Culture:</strong> A vibrant blend of indigenous Austronesian traditions with strong Spanish, American, and Asian influences, celebrated through colorful festivals (<em>fiestas</em>) and warm hospitality.</li>
+        </ul>
+
+        <p>
+            Known globally as the <em>"Pearl of the Orient Seas,"</em> the Philippines offers a rich tapestry of history, tropical landscapes, and bustling modern metropolises.
+        </p>
+        <br> <BR>
+         </center>
+    </section>
+
+    <head>
 
 <title>My Google Map</title>
 <style>
@@ -9,7 +157,7 @@
 body {
 font-family: Garamond;
 text-align: center;
-background-color: #F2DACE;
+background-color: #645be7;
 }
 
 body {
@@ -17,7 +165,7 @@ background-image: ;
 }
 
 h1 {
-color: #D49A9A;
+color: #2b5de6;
 }
 
 iframe {
@@ -28,7 +176,7 @@ border-radius: 15px;
 button {
 padding: 10px 20px;
 margin: 5px;
-background-color: #AA5E7A;
+background-color: #f5d02e;
 color: white;
 border: none;
 cursor: pointer;
@@ -36,32 +184,34 @@ border-radius: 5px;
 }
 
 button:hover {
-background-color: #F29191;
+background-color: #f29191;
 }
 
 </style>
 </head>
 <body>
 <script>
-document.writeln("<h1>MY GOOGLE MAP</h1>");
 
-document.writeln("<h2>Colegio de Sta. Rosa Makati</h2>");
 
-document.writeln("<iframe id='googlemap' src='https://maps.google.com/maps?q=Colegio%20de%20Sta.%20Rosa%20Makati&z=16&output=embed' width='600' height='400'></iframe>");
+document.writeln("<h1>GOOGLE MAP</h1>");
+
+document.writeln("<h2> NEXT DESTINATIONS </h2>");
+
+document.writeln("<iframe id='googlemap' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8002527.052792545!2d117.32692185091409!3d11.660077620073599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x324053215f87de63%3A0x784790ef7a29da57!2sPhilippines!5e0!3m2!1sen!2sph!4v1794536781701!5m2!1sen!2sph' width='600' height='400'></iframe>");
 
 document.writeln("<br><br>");
 
-document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d936212.7088815843!2d-101.26412926298067!3d23.56553798541156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2sMexico!5e0!3m2!1sen!2sph!4v1793932702809!5m2!1sen!2sph'\">MEXICO</button>");
+document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d503202.4249678684!2d125.80957020271133!3d9.827764307799592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3304043652d9e9b3%3A0xd4c56a60c9a11b84!2sSiargao%20Island!5e0!3m2!1sen!2sph!4v1794536848283!5m2!1sen!2sph'\">SIARGAO</button>");
 
-document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1139715.2851105453!2d-4.812620013225853!3d56.08780564757304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited%20Kingdom!5e0!3m2!1sen!2sph!4v1793932899081!5m2!1sen!2sph'\">UNITED KINGDOM</button>");
+document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2012503.8431894763!2d117.12639468643101!3d9.877897081959118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33ca8e536a3f0571%3A0x56f85eaca09c26a0!2sPalawan!5e0!3m2!1sen!2sph!4v1794536943916!5m2!1sen!2sph'\">PALAWAN</button>");
 
-document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13330221.900937323!2d-17.568078207018065!3d35.34450913449696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc42e3783261bc8b%3A0xa6ec2c940768a3ec!2sSpain!5e0!3m2!1sen!2sph!4v1793933018753!5m2!1sen!2sph'\">SPAIN</button>");
+document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61775.91655074145!2d120.93828387814794!3d14.599372898075902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec38b%3A0x69d1d5751069c11f!2sManila%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1794536998875!5m2!1sen!2sph'\">MANILA</button>");
 
-document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2438348.1253443835!2d-10.856010303546501!3d53.35758729611228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4859bae45c4027fb%3A0xcf7c1234cedbf408!2sIreland!5e0!3m2!1sen!2sph!4v1793933093009!5m2!1sen!2sph'\">IRELAND</button>");
+document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31224.598244035406!2d121.90662946056722!3d11.969324381490669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a53c2f324b4ee7%3A0xa738e81e5e6dda36!2sBoracay!5e0!3m2!1sen!2sph!4v1794537076179!5m2!1sen!2sph'\">BORACAY</button>");
 
-document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19108888.68907064!2d-116.75595486021228!3d54.222073081699776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b0d03d337cc6ad9%3A0x9968b72aa2438fa5!2sCanada!5e0!3m2!1sen!2sph!4v1793933175088!5m2!1sen!2sph'\">CANADA</button>");
+document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61241.04862296216!2d120.54871653401347!3d16.39607968079451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a16879def13f%3A0x8edef534be3a75c0!2sBaguio%2C%20Benguet!5e0!3m2!1sen!2sph!4v1794537160747!5m2!1sen!2sph'\">BAGUIO</button>");
 
-document.writeln("<button onclick=\"document.getElementById('googlemap').src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7762535.5839049!2d6.879605339430876!3d61.64086886053793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465cb2396d35f0f1%3A0x22b8eba28dad6f62!2sSweden!5e0!3m2!1sen!2sph!4v1793933541946!5m2!1sen!2sph'\">SWEDEN</button>");
 </script>
-</body>
+</body> 
+
 </html>
